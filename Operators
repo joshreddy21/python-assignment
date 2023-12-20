@@ -1,0 +1,68 @@
+************ 1. Write a function for arithmetic operators(+,-,*,/)*************
+def arithmetic_operations(a, b):
+    add_result = a + b
+    subtract_result = a - b
+    multiply_result = a * b
+    divide_result = a / b
+
+    return add_result, subtract_result, multiply_result, divide_result
+
+# Example usage:
+result = arithmetic_operations(5, 2)
+print("Addition:", result[0])
+print("Subtraction:", result[1])
+print("Multiplication:", result[2])
+print("Division:", result[3])
+
+***********2. Write a method for increment and decrement operators(++, --)**********
+def increment_decrement_operations(num):
+    num += 1  # Increment
+    num -= 1  # Decrement
+
+    return num
+
+# Example usage:
+number = 10
+number = increment_decrement_operations(number)
+print("After increment and decrement:", number)
+
+************3. Write a program to find the two numbers equal or not.**************
+def are_numbers_equal(a, b):
+    return a == b
+
+# Example usage:
+num1 = 5
+num2 = 5
+if are_numbers_equal(num1, num2):
+    print("Numbers are equal.")
+else:
+    print("Numbers are not equal.")
+
+***********4. Program for relational operators (<,<==, >, >==)************
+def relational_operations(a, b):
+    less_than = a < b
+    less_than_or_equal = a <= b
+    greater_than = a > b
+    greater_than_or_equal = a >= b
+
+    return less_than, less_than_or_equal, greater_than, greater_than_or_equal
+
+# Example usage:
+relational_results = relational_operations(3, 7)
+print("Less than:", relational_results[0])
+print("Less than or equal:", relational_results[1])
+print("Greater than:", relational_results[2])
+print("Greater than or equal:", relational_results[3])
+
+************5. Print the smaller and larger number*********def find_smaller_larger_number(a, b):
+    smaller_number = min(a, b)
+    larger_number = max(a, b)
+
+    return smaller_number, larger_number
+
+# Example usage:
+num_a = 8
+num_b = 3
+smaller, larger = find_smaller_larger_number(num_a, num_b)
+print("Smaller number:", smaller)
+print("Larger number:", larger)
