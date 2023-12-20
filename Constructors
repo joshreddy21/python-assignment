@@ -1,0 +1,57 @@
+************* 1. Write a class with a default constructor, one argument constructor and two argument 
+constructors. Instantiate the class to call all the constructors of that class from a main 
+class**********
+class MyClass:
+    def __init__(self):
+        print("Default Constructor")
+
+    def __init__(self, arg1):
+        print(f"One-Argument Constructor: {arg1}")
+
+    def __init__(self, arg1, arg2):
+        print(f"Two-Argument Constructor: {arg1}, {arg2}")
+
+# Instantiate the class to call all the constructors
+obj1 = MyClass()  # Calls the default constructor
+obj2 = MyClass("Argument1")  # Calls the one-argument constructor
+obj3 = MyClass("Argument1", "Argument2")  # Calls the two-argument constructor
+
+**********2. Call the constructors(both default and argument constructors) of super class from a child 
+class*******
+class ParentClass:
+    def __init__(self):
+        print("Parent Class Constructor")
+
+class ChildClass(ParentClass):
+    def __init__(self):
+        super().__init__()  # Call the constructor of the superclass
+        print("Child Class Constructor")
+
+# Instantiate the child class to call both constructors
+child_obj = ChildClass()
+
+*********3. Apply private, public, protected and default access modifiers to the constructor**********
+class ExampleClass:
+    def __init__(self):
+        self._protected_var = "Protected Variable"
+        self.__private_var = "Private Variable"
+
+    def get_private_var(self):
+        return self.__private_var
+
+# Instantiate the class and access variables with different access modifiers
+obj = ExampleClass()
+print(obj._protected_var)  # Access protected variable
+# print(obj.__private_var)  # This line would raise an error (NameError)
+print(obj.get_private_var())  # Access private variable using a method
+
+**********4. Write a program which illustrates the concept of attributes of a constructor*************
+class AttributeClass:
+    def __init__(self, attr1, attr2):
+        self.attr1 = attr1
+        self.attr2 = attr2
+
+# Instantiate the class to illustrate attributes of the constructor
+obj = AttributeClass("Value1", "Value2")
+print(obj.attr1)  # Access the first attribute
+print(obj.attr2)  # Access the second attribute
