@@ -1,0 +1,87 @@
+********** A, B and C are classes
+A is a super class. B is a sub class of A. C is a sub class of B. 
+Create three methods in each class, 2 methods are specific to each class and third 
+method (override method) should be in all three Classes A, B and C
+Create a class with main method. Create an object for each class A, B and C in main 
+method and call every method of each class using its own object/instance.
+Call an overridden method with super class reference to B and C class’s objects
+Runtime Polymorphism with Data Members/Instance variables, Repeat the above 
+process only for data members******************
+class A {
+    int a;
+
+    void methodA1() {
+        System.out.println("Method specific to class A");
+    }
+
+    void methodA2() {
+        System.out.println("Another method specific to class A");
+    }
+
+    void overriddenMethod() {
+        System.out.println("Overridden method in class A");
+    }
+}
+
+class B extends A {
+    int b;
+
+    void methodB1() {
+        System.out.println("Method specific to class B");
+    }
+
+    void methodB2() {
+        System.out.println("Another method specific to class B");
+    }
+
+    @Override
+    void overriddenMethod() {
+        System.out.println("Overridden method in class B");
+    }
+}
+
+class C extends B {
+    int c;
+
+    void methodC1() {
+        System.out.println("Method specific to class C");
+    }
+
+    void methodC2() {
+        System.out.println("Another method specific to class C");
+    }
+
+    @Override
+    void overriddenMethod() {
+        System.out.println("Overridden method in class C");
+    }
+}
+
+public class MainClass {
+    public static void main(String[] args) {
+        // Create objects for each class
+        A objA = new A();
+        B objB = new B();
+        C objC = new C();
+
+        // Call methods of each class using its own object
+        objA.methodA1();
+        objA.methodA2();
+        objA.overriddenMethod();
+
+        objB.methodB1();
+        objB.methodB2();
+        objB.overriddenMethod();
+
+        objC.methodC1();
+        objC.methodC2();
+        objC.overriddenMethod();
+
+        // Call overridden method with superclass reference
+        A objSuperB = new B();
+        objSuperB.overriddenMethod();
+
+        A objSuperC = new C();
+        objSuperC.overriddenMethod();
+    }
+}
