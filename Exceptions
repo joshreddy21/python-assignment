@@ -1,0 +1,137 @@
+**************** 1. Write a program to generate Arithmetic Exception without exception handling***************
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        int result = 10 / 0; // Arithmetic Exception
+    }
+}
+
+***************2. Handle the Arithmetic exception using try-catch block************
+public class ArithmeticExceptionHandling {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // Arithmetic Exception
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+**********3. Write a method which throws exception, Call that method in main class without try block***************
+public class ExceptionThrowingMethod {
+    public static void main(String[] args) {
+        // Calling a method that throws an exception without using try-catch
+        methodWithException();
+    }
+
+    static void methodWithException() throws ArithmeticException {
+        throw new ArithmeticException("Custom Arithmetic Exception");
+    }
+}
+
+***********4. Write a program with multiple catch blocks***************
+public class MultipleCatchBlocksExample {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1, 2, 3};
+            int result = arr[4]; // ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Generic Exception: " + e.getMessage());
+        }
+    }
+}
+
+***************5. Write a program to throw exception with your own message******************
+public class CustomExceptionMessage {
+    public static void main(String[] args) {
+        try {
+            throw new Exception("Custom Exception with a Message");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+*************6. Write a program to create your own exception******************
+class CustomException extends Exception {
+    public CustomException(String message) {
+        super(message);
+    }
+}
+
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        try {
+            throw new CustomException("This is a custom exception");
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+**********7. Write a program with finally block****************
+public class FinallyBlockExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0; // Arithmetic Exception
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception caught: " + e.getMessage());
+        } finally {
+            System.out.println("Finally block executed");
+        }
+    }
+}
+
+*************8. Write a program to generate Arithmetic Exception**************
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        int result = 10 / 0; // Arithmetic Exception
+    }
+}
+
+**********9. Write a program to generate FileNotFoundException*******************
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class FileNotFoundExceptionExample {
+    public static void main(String[] args) throws FileNotFoundException {
+        FileInputStream fileInputStream = new FileInputStream("nonexistentfile.txt");
+    }
+}
+
+********************10. Write a program to generate ClassNotFoundException****************
+public class ClassNotFoundExceptionExample {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class.forName("NonExistentClass");
+    }
+}
+
+************11. Write a program to generate IOException***************
+import java.io.IOException;
+
+public class IOExceptionExample {
+    public static void main(String[] args) throws IOException {
+        throw new IOException("This is an IOException");
+    }
+}
+
+**************12. Write a program to generate NoSuchFieldException***********
+public class NoSuchFieldExceptionExample {
+    private int exampleField;
+
+    public static void main(String[] args) {
+        try {
+            NoSuchFieldExceptionExample obj = new NoSuchFieldExceptionExample();
+            obj.accessNonExistentField();
+        } catch (NoSuchFieldException e) {
+            System.out.println("NoSuchFieldException: " + e.getMessage());
+        }
+    }
+
+    void accessNonExistentField() throws NoSuchFieldException {
+        int value = this.exampleField; // This line will throw NoSuchFieldException
+    }
+}
