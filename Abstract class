@@ -1,0 +1,69 @@
+***************1. Create an abstract class with abstract and non-abstract methods.************
+// Abstract class
+abstract class AbstractExample {
+    // Abstract method (to be implemented by subclasses)
+    abstract void abstractMethod();
+
+    // Non-abstract method
+    void nonAbstractMethod() {
+        System.out.println("Non-abstract method in AbstractExample");
+    }
+}
+
+****************2. Create a sub class for an abstract class. Create an object in the child class for the 
+abstract class and access the non-abstract methods***********8
+// Subclass for AbstractExample
+class Subclass extends AbstractExample {
+    // Implementation of the abstract method
+    @Override
+    void abstractMethod() {
+        System.out.println("Abstract method implemented in Subclass");
+    }
+
+    // Additional non-abstract method in the subclass
+    void additionalMethod() {
+        System.out.println("Additional method in Subclass");
+    }
+}
+
+**********3. Create an instance for the child class in child class and call abstract methods***************
+
+*******************// Subclass for AbstractExample
+class Subclass extends AbstractExample {
+    // Implementation of the abstract method
+    @Override
+    void abstractMethod() {
+        System.out.println("Abstract method implemented in Subclass");
+
+        // Create an instance for the child class in the child class
+        Subclass childInstance = new Subclass();
+
+        // Call abstract method
+        childInstance.abstractMethod();
+    }
+
+    // Additional non-abstract method in the subclass
+    void additionalMethod() {
+        System.out.println("Additional method in Subclass");
+    }
+}
+4. Create an instance for the child class in child class and call non-abstract method**********
+// Subclass for AbstractExample
+class Subclass extends AbstractExample {
+    // Implementation of the abstract method
+    @Override
+    void abstractMethod() {
+        System.out.println("Abstract method implemented in Subclass");
+
+        // Create an instance for the child class in the child class
+        Subclass childInstance = new Subclass();
+
+        // Call non-abstract method
+        childInstance.nonAbstractMethod();
+    }
+
+    // Additional non-abstract method in the subclass
+    void additionalMethod() {
+        System.out.println("Additional method in Subclass");
+    }
+}
