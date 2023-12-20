@@ -1,0 +1,418 @@
+***************1. Write a function to add integer values of an array*****************
+public class ArrayOperations {
+    public static int sumArray(int[] array) {
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        int result = sumArray(numbers);
+        System.out.println("Sum of the array elements: " + result);
+    }
+}
+
+****************2. Write a function to calculate the average value of an array of integers*************
+public class ArrayOperations {
+    public static double calculateAverage(int[] array) {
+        int sum = 0;
+        for (int num : array) {
+            sum += num;
+        }
+        return (double) sum / array.length;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        double result = calculateAverage(numbers);
+        System.out.println("Average of the array elements: " + result);
+    }
+}
+
+*********************3. Write a program to find the index of an array element**************
+public class ArrayOperations {
+    public static int findIndex(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i;
+            }
+        }
+        return -1; // Element not found
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int targetValue = 30;
+        int index = findIndex(numbers, targetValue);
+
+        if (index != -1) {
+            System.out.println("Index of " + targetValue + " is: " + index);
+        } else {
+            System.out.println(targetValue + " not found in the array.");
+        }
+    }
+}
+
+************4. Write a function to test if array contains a specific value***********
+public class ArrayOperations {
+    public static boolean containsValue(int[] array, int target) {
+        for (int num : array) {
+            if (num == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int targetValue = 30;
+        boolean result = containsValue(numbers, targetValue);
+
+        if (result) {
+            System.out.println("Array contains " + targetValue);
+        } else {
+            System.out.println("Array does not contain " + targetValue);
+        }
+    }
+}
+
+***********5. Write a function to remove a specific element from an array***********
+import java.util.Arrays;
+
+public class ArrayOperations {
+    public static int[] removeElement(int[] array, int target) {
+        int indexToRemove = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                indexToRemove = i;
+                break;
+            }
+        }
+
+        if (indexToRemove != -1) {
+            int[] newArray = new int[array.length - 1];
+            System.arraycopy(array, 0, newArray, 0, indexToRemove);
+            System.arraycopy(array, indexToRemove + 1, newArray, indexToRemove, newArray.length - indexToRemove);
+            return newArray;
+        } else {
+            return array; // Element not found, return original array
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int targetValue = 30;
+        int[] result = removeElement(numbers, targetValue);
+
+        System.out.println("Array after removing " + targetValue + ": " + Arrays.toString(result));
+    }
+}
+
+**********6. Write a function to copy an array to another array***************
+import java.util.Arrays;
+
+public class ArrayOperations {
+    public static int[] copyArray(int[] source) {
+        return Arrays.copyOf(source, source.length);
+    }
+
+    public static void main(String[] args) {
+        int[] originalArray = {1, 2, 3, 4, 5};
+        int[] copiedArray = copyArray(originalArray);
+
+        System.out.println("Original Array: " + Arrays.toString(originalArray));
+        System.out.println("Copied Array: " + Arrays.toString(copiedArray));
+    }
+}
+
+******************7. Write a function to insert an element at a specific position in the array***************
+import java.util.Arrays;
+
+public class ArrayOperations {
+    public static int[] insertElement(int[] array, int position, int element) {
+        int[] newArray = new int[array.length + 1];
+        System.arraycopy(array, 0, newArray, 0, position);
+        newArray[position] = element;
+        System.arraycopy(array, position, newArray, position + 1, array.length - position);
+        return newArray;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int position = 2;
+        int element = 25;
+        int[] result = insertElement(numbers, position, element);
+
+        System.out.println("Array after inserting " + element + " at position " + position + ": " + Arrays.toString(result));
+    }
+}
+
+**************8. Write a function to find the minimum and maximum value of an array*****************
+public class ArrayOperations {
+    public static int findMin(int[] array) {
+        int min = array[0];
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
+    }
+
+    public static int findMax(int[] array) {
+        int max = array[0];
+        for (int num : array) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 5, 8, 20, 15};
+        int minValue = findMin(numbers);
+        int maxValue = findMax(numbers);
+
+        System.out.println("Minimum value: " + minValue);
+        System.out.println("Maximum value: " + maxValue);
+    }
+}
+
+*************9. Write a function to reverse an array of integer values*************
+import java.util.Arrays;
+
+public class ArrayOperations {
+    public static int[] reverseArray(int[] array) {
+        int[] reversedArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            reversedArray[i] = array[array.length - 1 - i];
+        }
+        return reversedArray;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        int[] reversedNumbers = reverseArray(numbers);
+
+        System.out.println("Original Array: " + Arrays.toString(numbers));
+        System.out.println("Reversed
+
+****************10. Write a function to find the duplicate values of an array*************
+import java.util.HashSet;
+
+public class ArrayOperations {
+    public static void findDuplicates(int[] array) {
+        HashSet<Integer> uniqueElements = new HashSet<>();
+        HashSet<Integer> duplicateElements = new HashSet<>();
+
+        for (int num : array) {
+            if (!uniqueElements.add(num)) {
+                duplicateElements.add(num);
+            }
+        }
+
+        System.out.println("Duplicate elements in the array: " + duplicateElements);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 2, 4, 5, 4, 6};
+        findDuplicates(numbers);
+    }
+}
+
+************11. Write a program to find the common values between two arrays*************
+import java.util.HashSet;
+
+public class ArrayOperations {
+    public static void findCommonValues(int[] array1, int[] array2) {
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> commonValues = new HashSet<>();
+
+        for (int num : array1) {
+            set1.add(num);
+        }
+
+        for (int num : array2) {
+            if (!set1.add(num)) {
+                commonValues.add(num);
+            }
+        }
+
+        System.out.println("Common values between the two arrays: " + commonValues);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers1 = {1, 2, 3, 4, 5};
+        int[] numbers2 = {3, 4, 5, 6, 7};
+        findCommonValues(numbers1, numbers2);
+    }
+}
+
+*************12. Write a method to remove duplicate elements from an array**************
+import java.util.HashSet;
+
+public class ArrayOperations {
+    public static int[] removeDuplicates(int[] array) {
+        HashSet<Integer> uniqueElements = new HashSet<>();
+        int[] resultArray = new int[array.length];
+        int index = 0;
+
+        for (int num : array) {
+            if (uniqueElements.add(num)) {
+                resultArray[index++] = num;
+            }
+        }
+
+        return Arrays.copyOf(resultArray, index);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 2, 4, 5, 4, 6};
+        int[] result = removeDuplicates(numbers);
+
+        System.out.println("Array after removing duplicates: " + Arrays.toString(result));
+    }
+}
+
+
+************14. Write a method to find the second largest number in an array************
+public class ArrayOperations {
+    public static int findSecondLargest(int[] array) {
+        int firstLargest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        for (int num : array) {
+            if (num > firstLargest) {
+                secondLargest = firstLargest;
+                firstLargest = num;
+            } else if (num > secondLargest && num != firstLargest) {
+                secondLargest = num;
+            }
+        }
+
+        return secondLargest;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 3, 8, 7};
+        int result = findSecondLargest(numbers);
+
+        System.out.println("Second largest number: " + result);
+    }
+}
+
+
+*********15. Write a method to find number of even number and odd numbers in an array**************
+public class ArrayOperations {
+    public static void countEvenOdd(int[] array) {
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int num : array) {
+            if (num % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
+            }
+        }
+
+        System.out.println("Number of even numbers: " + evenCount);
+        System.out.println("Number of odd numbers: " + oddCount);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        countEvenOdd(numbers);
+    }
+}
+
+
+**************16. Write a function to get the difference of largest and smallest value***************
+public class ArrayOperations {
+    public static int getDifference(int[] array) {
+        int min = array[0];
+        int max = array[0];
+
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        return max - min;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {5, 10, 3, 8, 7};
+        int result = getDifference(numbers);
+
+        System.out.println("Difference of largest and smallest value: " + result);
+    }
+}
+
+
+**************17. Write a method to verify if the array contains two specified elements(12,23)************
+public class ArrayOperations {
+    public static boolean containsTwoElements(int[] array, int element1, int element2) {
+        boolean containsElement1 = false;
+        boolean containsElement2 = false;
+
+        for (int num : array) {
+            if (num == element1) {
+                containsElement1 = true;
+            }
+            if (num == element2) {
+                containsElement2 = true;
+            }
+        }
+
+        return containsElement1 && containsElement2;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {10, 15, 20, 12, 25, 30};
+        int element1 = 12;
+        int element2 = 23;
+
+        if (containsTwoElements(numbers, element1, element2)) {
+            System.out.println("Array contains both elements " + element1 + " and " + element2);
+        } else {
+            System.out.println("Array does not contain both elements " + element1 + " and " + element2);
+        }
+    }
+}
+
+*******18. Write a program to remove the duplicate elements and return the new array*************
+import java.util.Arrays;
+import java.util.HashSet;
+
+public class ArrayOperations {
+    public static int[] removeDuplicates(int[] array) {
+        HashSet<Integer> uniqueElements = new HashSet<>();
+        int[] resultArray = new int[array.length];
+        int index = 0;
+
+        for (int num : array) {
+            if (uniqueElements.add(num)) {
+                resultArray[index++] = num;
+            }
+        }
+
+        return Arrays.copyOf(resultArray, index);
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 2, 4, 5, 4, 6};
+        int[] result = removeDuplicates(numbers);
+
+        System.out.println("Array after removing duplicates: " + Arrays.toString(result));
+    }
+}
