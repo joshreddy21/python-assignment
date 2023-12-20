@@ -1,0 +1,56 @@
+*********1. Define a static variable and access that through a class ************
+public class StaticVariableExample {
+    static int staticVariable = 42;
+
+    public static void main(String[] args) {
+        System.out.println("Accessing static variable through the class: " + StaticVariableExample.staticVariable);
+    }
+}
+
+**********************2. Define a static variable and access that through a instance*********
+public class StaticVariableExample {
+    static int staticVariable = 42;
+
+    public static void main(String[] args) {
+        // Accessing static variable through an instance (not recommended)
+        StaticVariableExample instance = new StaticVariableExample();
+        System.out.println("Accessing static variable through an instance: " + instance.staticVariable);
+    }
+}
+
+************3. Define a static variable and change within the instance******
+public class StaticVariableExample {
+    static int staticVariable = 42;
+
+    public void changeStaticVariableWithinInstance() {
+        // Changing static variable within an instance
+        staticVariable = 99;
+    }
+
+    public static void main(String[] args) {
+        StaticVariableExample instance = new StaticVariableExample();
+        System.out.println("Before change: " + StaticVariableExample.staticVariable);
+
+        // Change static variable within the instance
+        instance.changeStaticVariableWithinInstance();
+        System.out.println("After change within instance: " + StaticVariableExample.staticVariable);
+    }
+}
+
+******4. Define a static variable and change within the class************
+public class StaticVariableExample {
+    static int staticVariable = 42;
+
+    public static void changeStaticVariableWithinClass() {
+        // Changing static variable within the class
+        staticVariable = 99;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Before change: " + StaticVariableExample.staticVariable);
+
+        // Change static variable within the class
+        changeStaticVariableWithinClass();
+        System.out.println("After change within class: " + StaticVariableExample.staticVariable);
+    }
+}
