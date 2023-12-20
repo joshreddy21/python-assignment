@@ -1,0 +1,34 @@
+************ 1. Write two methods with the same name but different number of parameters of same type 
+and call the methods  
+def print_info(name):
+    print(f"Name: {name}")
+
+def print_info(name, age):
+    print(f"Name: {name}, Age: {age}")
+
+# Call the methods
+print_info("John")      # Calls the first method
+print_info("Jane", 25)  # Calls the second method
+
+************************2. Write two methods with the same name but different number of parameters of different 
+data type and call the methods **************
+def print_info(name):
+    print(f"Name: {name}")
+
+def print_info(name, age):
+    print(f"Name: {name}, Age: {age}")
+
+# Call the methods
+print_info("John")      # Calls the first method
+print_info("Jane", 25)  # Calls the second method
+
+*********3. Write two methods with the same name and same number of parameters of same type**************
+def print_info(name):
+    print(f"Name: {name}")
+
+def display_info(name):
+    print(f"Name: {name}")
+
+# Call the methods
+print_info("John")      # Calls the first method
+display_info("Jane")    # Calls the second method
