@@ -1,0 +1,82 @@
+**********1. Different ways creating a string***************
+// Using String literal
+String str1 = "Hello, World!";
+
+// Using new keyword
+String str2 = new String("Hello, World!");
+
+// Using char array
+char[] charArray = {'H', 'e', 'l', 'l', 'o'};
+String str3 = new String(charArray);
+
+// Using StringBuilder
+StringBuilder strBuilder = new StringBuilder("Hello");
+String str4 = strBuilder.toString();
+
+**************2. Concatenating two strings using + operator*********
+String str1 = "Hello";
+String str2 = "World";
+String result = str1 + ", " + str2; // Concatenation using +
+System.out.println(result);
+
+*************3. Finding the length of the string************
+String str = "Hello, World!";
+int length = str.length();
+System.out.println("Length of the string: " + length);
+
+********4. Extract a string using Substring**************
+String original = "Hello, World!";
+String substring = original.substring(7); // Starting from index 7 to the end
+System.out.println("Substring: " + substring);
+
+***********5. Searching in strings using index()***********
+String str = "Hello, World!";
+int index = str.indexOf("World");
+System.out.println("Index of 'World': " + index);
+
+***********6. Matching a String Against a Regular Expression With matches()**********
+String str = "Hello123";
+boolean isMatch = str.matches("[a-zA-Z]+[0-9]+");
+System.out.println("Matches regex: " + isMatch);
+
+******7. Comparing strings*******
+String str1 = "Hello";
+String str2 = "hello";
+int result = str1.compareTo(str2);
+System.out.println("Comparison result: " + result);
+
+********8. startsWith(), endsWith() and compareTo()***********
+String str = "Hello, World!";
+boolean startsWithHello = str.startsWith("Hello");
+boolean endsWithWorld = str.endsWith("World!");
+int compareToResult = str.compareTo("Hello, Universe!");
+System.out.println("Starts with 'Hello': " + startsWithHello);
+System.out.println("Ends with 'World!': " + endsWithWorld);
+System.out.println("Comparison result: " + compareToResult);
+
+**********9. Trimming strings with strip()**********
+String str = "   Hello, World!   ";
+String trimmed = str.strip();
+System.out.println("Trimmed string: '" + trimmed + "'");
+
+*********10. Replacing characters in strings with replace()************
+String str = "Hello, World!";
+String replaced = str.replace('o', 'X');
+System.out.println("Replaced string: " + replaced);
+
+************11. Splitting strings with split()********
+String str = "apple,orange,banana";
+String[] fruits = str.split(",");
+System.out.println("Fruits: " + Arrays.toString(fruits));
+
+*************12. Converting integer objects to Strings**************
+int num = 42;
+String strNum = Integer.toString(num);
+System.out.println("Converted string: " + strNum);
+
+***************13. Converting to uppercase and lowercase*************
+String str = "Hello, World!";
+String upperCase = str.toUpperCase();
+String lowerCase = str.toLowerCase();
+System.out.println("Uppercase: " + upperCase);
+System.out.println("Lowercase: " + lowerCase);
